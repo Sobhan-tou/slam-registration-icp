@@ -5,6 +5,7 @@ The KITTI dataset is loaded, specifically a series of LiDAR .bin files containin
 
 Show Lidar Points
 The first scan is converted into an Open3D point cloud and visualized to inspect the spatial distribution of raw LiDAR data.
+![ICP Result](images/1.png)
 
 Show Lidar Points Intensity
 Intensity values from the LiDAR scans are used to color the point cloud, providing richer visual information for interpretation.
