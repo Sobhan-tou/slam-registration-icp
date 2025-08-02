@@ -1,27 +1,32 @@
-# slam-registration-icp
-Learning Point Cloud Registration using ICP on KITTI dataset
+# Descriptions for README.md
+## 1. Point Cloud Registration Using ICP
+Import Dataset
+The KITTI dataset is loaded, specifically a series of LiDAR .bin files containing 3D point clouds for registration tasks.
 
+Show Lidar Points
+The first scan is converted into an Open3D point cloud and visualized to inspect the spatial distribution of raw LiDAR data.
 
-## Summary – Point Cloud Registration Using ICP
-1. Load and Visualize KITTI Point Cloud
-This section loads binary LiDAR scans from the KITTI dataset, converts them into Open3D point clouds, and displays the first scan. This gives a visual sense of the raw data before registration.
-![ICP Result](images/1.png)
+Show Lidar Points Intensity
+Intensity values from the LiDAR scans are used to color the point cloud, providing richer visual information for interpretation.
 
-3. Load Ground Truth Poses
-Ground-truth camera poses are loaded from the KITTI .txt file. These poses are essential for evaluating the accuracy of the registration results.
-![ICP Result](images/2.png)
+(a) Select Two Point Clouds:
+Two consecutive frames from the dataset are selected to demonstrate pairwise registration using the ICP algorithm.
 
-5. Apply ICP for Frame-to-Frame Registration
-Iteratively aligns each point cloud to the previous one using Open3D's ICP algorithm. The result is an estimated trajectory and a map built by accumulating registered scans.
-![ICP Result](images/image.png)
-6. Transform Ground Truth and Estimated Trajectories
-This section extracts and transforms the translation components of ground truth and estimated trajectories, preparing them for 2D visualization.
+(b) Visualize Unregistered Point Clouds:
+The source and target point clouds are displayed together in their original (unregistered) coordinate frames to show initial misalignment.
 
-7. Visualize Robot Trajectory
-Plots the estimated and ground-truth robot paths in the 2D plane (X, Y), allowing for a qualitative comparison of trajectory accuracy.
+(c) Apply ICP Algorithm:
+The Iterative Closest Point (ICP) algorithm is applied to align the source point cloud with the target. The transformation matrix is printed.
 
-8. Compute Average Displacement Error (ADE)
-Calculates the mean Euclidean distance between estimated positions and ground-truth at each time step, giving a quantitative measure of registration accuracy.
+(d) Visualize Aligned Point Clouds:
+Both the original and aligned point clouds are visualized together to qualitatively assess the success of registration.
 
-9. Visualize Final Registered Map
-Displays the full registered point cloud map after applying ICP across all frames. This helps to verify the 
+Animation
+A rotating animation is generated to better visualize the 3D alignment result from multiple viewpoints.
+
+## 2. Incremental Registration of Multiple Point Clouds Using ICP
+(a, b) Use the Result from Previous Part: Visualize the Final Map
+ICP is extended to incrementally register a sequence of point clouds. Each new scan is aligned with the accumulated map, building a global model.
+
+Map and Trajectory
+The final map and estimated trajectory are plotted alongside the ground-truth poses. A comparison is made and the Average Displacement Error (ADE) is computed.
