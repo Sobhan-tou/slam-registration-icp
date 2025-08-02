@@ -41,4 +41,7 @@ Open3D Rendering Limitation: This notebook uses the Open3D visualizer, which doe
 
 Dataset Path Adjustment: Make sure to update dataset paths (e.g., kitti_sample/00/) according to the location of your KITTI data on your local system.
 
-Redundant Imports for Modularity: Some import statements are intentionally repeated across cells to 
+Redundant Imports for Modularity: Some import statements are intentionally repeated across cells to allow section-wise execution, enabling you to run individual parts of the notebook independently.
+
+In the first part of the notebook, the KITTI dataset is accessed directly from a ZIP file, while in the second part, it is used from the extracted folder. Make sure both formats are available or adjust the loading logic accordingly.
+
