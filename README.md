@@ -1,4 +1,3 @@
-# Descriptions for README.md
 ## 1. Point Cloud Registration Using ICP
 Import Dataset
 The KITTI dataset is loaded, specifically a series of LiDAR .bin files containing 3D point clouds for registration tasks.
