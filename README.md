@@ -34,3 +34,11 @@ ICP is extended to incrementally register a sequence of point clouds. Each new s
 Map and Trajectory
 The final map and estimated trajectory are plotted alongside the ground-truth poses. A comparison is made and the Average Displacement Error (ADE) is computed.
 ![ICP Result](images/5.PNG)
+
+
+## Technical Notes
+Open3D Rendering Limitation: This notebook uses the Open3D visualizer, which does not support rendering inside Google Colab. For best results, run it locally in Jupyter Notebook or any desktop Python environment.
+
+Dataset Path Adjustment: Make sure to update dataset paths (e.g., kitti_sample/00/) according to the location of your KITTI data on your local system.
+
+Redundant Imports for Modularity: Some import statements are intentionally repeated across cells to 
